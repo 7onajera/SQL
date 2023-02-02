@@ -1,0 +1,33 @@
+--Create a clothing store database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, price INTEGER, section TEXT, quantity_sold INTEGER);
+
+INSERT INTO store VALUES (1, "Black Blazer", 35, "Semiformal", 16);
+INSERT INTO store VALUES (2, "White Blouse", 22.99, "Semiformal", 10);
+INSERT INTO store VALUES (3, "Striped Dress", 21.50, "Casual", 26);
+INSERT INTO store VALUES (4, "Orange Jacket", 64.99, "Winter", 12);
+INSERT INTO store VALUES (5, "Distressed Jeans", 34.50, "Casual", 6);
+INSERT INTO store VALUES (6, "Blue Jumpsuit", 34.50, "Casual", 3);
+INSERT INTO store VALUES (7, "Black Leggings", 10.99, "Loungewear", 23);
+INSERT INTO store VALUES (8, "Rainbow Leggings", 10.99, "Loungewear", 13);
+INSERT INTO store VALUES (9, "Checkered Pants", 25.95, "Casual", 8);
+INSERT INTO store VALUES (10, "Green Pants", 25.95, "Casual", 15);
+INSERT INTO store VALUES (11, "Green Skirt", 14.95, "Casual", 18);
+INSERT INTO store VALUES (12, "Rainbow Skirt", 16.99, "Casual", 10);
+INSERT INTO store VALUES (13, "Gray Sweater", 22, "Casual", 15);
+INSERT INTO store VALUES (14, "Purple Sweatpants", 25.95, "Loungewear", 33);
+INSERT INTO store VALUES (15, "Orange Sweatpants",25.95, "Loungewear", 20);
+INSERT INTO store VALUES (16, "Sweater Vest", 15, "Semiformal", 5);
+INSERT INTO store VALUES (17, "Gray Vest", 18.99, "Semiformal", 8);
+INSERT INTO store VALUES (18, "Navy Vest", 18.99, "Semiformal", 12);
+
+--Display the database ordered by price.
+SELECT * FROM store ORDER BY price;
+
+--What is the avg price of items in the Casual section?
+SELECT AVG(price) "avg casual item price" 
+FROM store
+WHERE section='Casual';
+
+--What was the most sold item in the store?
+SELECT item, MAX(quantity_sold) FROM store;
